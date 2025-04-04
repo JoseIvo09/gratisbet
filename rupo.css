@@ -101,7 +101,7 @@ button:hover {
 .modal-content {
     position: relative; /* antes era absolute */
     top: 50%;
-    left: 50%;
+    left: 48%;
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 800px;
