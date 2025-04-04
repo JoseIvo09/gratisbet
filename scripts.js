@@ -57,7 +57,7 @@ function redirecionar() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Cadastro realizado com sucesso!");
-    window.location.href = "loginn.html";
+    window.location.href = "index.html";
 }
 
 function toggleSenha(id) {
