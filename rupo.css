@@ -99,7 +99,7 @@ button:hover {
 }
 
 .modal-content {
-    position: absolute;
+    position: relative; /* antes era absolute */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -120,8 +120,8 @@ button:hover {
 
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 10px;
+    left: 10px;
     width: 35px;
     height: 35px;
     display: flex;
