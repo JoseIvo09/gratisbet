@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários Cadastrados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Usuários Cadastrados</h1>
+        <ul id="listaUsuarios"></ul>
+        <button onclick="limparUsuarios()">Limpar Cadastros</button>
+    </div>
+
+    <script>
+        function carregarUsuarios() {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            const lista = document.getElementById("listaUsuarios");
+
+            if (usuarios.length === 0) {
+                lista.innerHTML = "<p>Nenhum usuário cadastrado.</p>";
+                return;
+            }
+
+            lista.innerHTML = "";
+            usuarios.forEach(user => {
+                let li = document.createElement("li");
+                li.textContent = `Nome: ${user.nome} | Email: ${user.email}`;
+                lista.appendChild(li);
+            });
+        }
+
+        function limparUsuarios() {
+            if (confirm("Tem certeza que deseja apagar todos os cadastros?")) {
+                localStorage.removeItem("usuarios");
+                carregarUsuarios();
+            }
+        }
+
+        window.onload = carregarUsuarios;
+    </script>
+</body>
+</html>

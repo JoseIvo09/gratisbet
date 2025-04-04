@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form onsubmit="event.preventDefault(); redirecionar();">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <div class="password-container">
+                <input type="password" id="senha" name="senha" required oninput="verificarSenha();">
+                <span class="toggle-password" onclick="toggleSenha('senha')">👁️</span>
+            </div>
+
+            <label for="senhaConfirmacao">Repita a Senha:</label>
+            <div class="password-container">
+                <input type="password" id="senhaConfirmacao" name="senhaConfirmacao" required oninput="verificarConfirmacaoSenha();">
+                <span class="toggle-password" onclick="toggleSenha('senhaConfirmacao')">👁️</span>
+            </div>
+            <div id="mensagemSenha"></div>
+
+            <h3>Requisitos da Senha:</h3>
+            <ul>
+                <li id="requisitoMinLength">Mínimo de 8 caracteres</li>
+                <li id="requisitoUpperCase">Pelo menos uma letra maiúscula (A-Z)</li>
+                <li id="requisitoLowerCase">Pelo menos uma letra minúscula (a-z)</li>
+                <li id="requisitoNumber">Pelo menos um número (0-9)</li>
+                <li id="requisitoSpecialChar">Pelo menos um caractere especial (!@#$%^&*)</li>
+            </ul>
+
+            <button type="submit" class="button">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="index.html">Faça login aqui</a>.</p>
+    </div>
+</body>
+</html>
