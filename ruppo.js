@@ -1,4 +1,4 @@
-const jsonFile = 'completo.json';
+const jsonFile = 'fh.json';
 const apiUrl = 'https://flex.smokace718.com/pt-br/game/launch';
 let games = [];
 let categories = new Map();
